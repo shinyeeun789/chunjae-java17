@@ -21,15 +21,30 @@ public class CollectionsEx3 {
         30   31
         */
 
+        System.out.print("달력을 출력하고 싶은 월 : ");
         Scanner sc = new Scanner(System.in);
         int month = sc.nextInt();
-        System.out.println(month + "월");
-        System.out.println("일\t 월\t 화\t 수\t 목\t 금\t 토");
-
         Calendar cal = Calendar.getInstance();
         cal.clear();
         cal.set(2023, month-1, 1);
-        System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+
+        // 달력 출력
+        System.out.printf("\n========== %d월 ===========\n", month);
+        System.out.println("일\t월\t화\t수\t목\t금\t토");
+
+        for (int i=0; i<6; i++) {
+            for (int j=1; j<=7; j++) {
+                int date = (7 * i + j) - (cal.get(Calendar.DAY_OF_WEEK) - 1);
+                if (date < 1) {
+                    System.out.print("\t");
+                } else if(date <= cal.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+                    System.out.print(date + "\t");
+                } else {
+                    break;
+                }
+            }
+            System.out.println();
+        }
 
     }
 
