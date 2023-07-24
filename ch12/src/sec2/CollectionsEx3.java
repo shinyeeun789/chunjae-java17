@@ -21,12 +21,14 @@ public class CollectionsEx3 {
         30   31
         */
 
-        System.out.print("달력을 출력하고 싶은 월 : ");
         Scanner sc = new Scanner(System.in);
+        System.out.print("년 : ");
+        int year = sc.nextInt();
+        System.out.print("월 : ");
         int month = sc.nextInt();
         Calendar cal = Calendar.getInstance();
         cal.clear();
-        cal.set(2023, month-1, 1);
+        cal.set(year, month-1, 1);
 
         // 달력 출력
         System.out.printf("\n========== %d월 ===========\n", month);
