@@ -39,7 +39,7 @@ public class CollectionsEx3 {
                 int date = (7 * i + j) - (cal.get(Calendar.DAY_OF_WEEK) - 1);
                 if (date < 1) {
                     System.out.print("\t");
-                } else if(date <= cal.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+                } else if(date <= cal.getActualMaximum(Calendar.DAY_OF_MONTH)) {        // cal.getActualMaximum(Calendar.DAY_OF_MONTH) = 현재 7월이라면 '8월 1일 - 1'로 구하기도 함
                     System.out.print(date + "\t");
                 } else {
                     break;
